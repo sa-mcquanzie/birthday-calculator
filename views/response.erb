@@ -8,7 +8,9 @@
   </head>
 
   <body>
-    <h1>Hello <%= @name %></h2>
-    <p>Your birthday is: <%= @day %>/<%= @month %>/<%= @year %></p>
+    <div id="response-container">
+      <p id="greeting">Hello <%= @name %></p>
+      <p id="birthday-message">Your birthday is: <%= @day %>/<%= @month %>/<%= @year %></p>
+    </div>
   </body>
 </html>

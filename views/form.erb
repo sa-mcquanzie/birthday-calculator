@@ -8,10 +8,20 @@
   </head>
 
   <body>
-    <form method="POST" action="/response">
-      <p>Your name: <input type="text" name="name"></p>
-      <p>Your birthday: <input type="date" name="birthday"></p>
-      <input type="submit">
-    </form>
+    <div id="form-container">
+      <form method="POST" action="/response">
+        <div id="name-field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name">
+        </div>
+
+        <div id="date-field">
+          <label for="birthday">Your birthday</label>
+          <input type="date" id="birthday" name="birthday">
+        </div>
+
+        <input id="submit-button" type="submit">
+      </form>
+    </div>
   </body>
 </html>
