@@ -2,6 +2,8 @@
 
 <html>
   <head>
+    <link href="/style.css" rel="stylesheet" type="text/css" />
+    
     <title>
       Birthdays
     </title>
@@ -10,7 +12,7 @@
   <body>
     <div id="response-container">
       <p id="greeting">Hello <%= @name %></p>
-      <p id="birthday-message">Your birthday is: <%= @day %>/<%= @month %>/<%= @year %></p>
+      <p id="birthday-message">Your birthday is in <%= @days_left %> days on <%= @next_birthday %></p> %>
     </div>
   </body>
 </html>
