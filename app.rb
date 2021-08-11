@@ -1,4 +1,4 @@
-require 'activesupport'
+require 'active_support/core_ext/integer/inflections.rb'
 require 'sinatra'
 require "sinatra/reloader" if development?
 
@@ -7,18 +7,26 @@ get '/' do
 end
 
 post '/response' do
-  @name = params[:name]
+  name = params[:name]
   b = params[:birthday].split("-").map(&:to_i)  
   today = Date.today
   dob = Date.new(b[0], b[1], b[2])
 
   if Date.today.yday < dob.yday
-    next_birthday = Date.new(today.year, dob.month, dob.day)
+    birthday = Date.new(today.year, dob.month, dob.day)
   else
-    next_birthday = Date.new(today.year + 1, dob.month, dob.day)
+    birthday = Date.new(today.year + 1, dob.month, dob.day)
   end
 
-  @days_left = (next_birthday - today).numerator
+  days_left = (birthday - today).numerator
+  formatted_date = birthday.strftime("#{birthday.day.ordinalize} of %B, #{birthday.year}")
+  is_birthday = today.month == birthday.month && today.day == birthday.day
+
+  if is_birthday
+    @birthday_message = "Happy birthday #{name}!!!"
+  else
+    @birthday_message = "Hello #{name} :)\nYour birthday is in #{days_left} days on the #{formatted_date}"
+  end
 
   erb :response
 end
