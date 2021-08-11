@@ -1,4 +1,5 @@
 body {
+  background-color: #e6e6ff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,7 +40,16 @@ input {
 }
 
 #cake-image img {
-  border-radius: 16px;;
-  width: 33.3vw;
+  border-radius: 16px;
+  width: auto;
   height:auto;
+  max-height: 66.6vh;
+}
+
+.birthday {
+  color: #9900cc;
+  line-height: 0.75;
+  text-align: center;
+  font-size: 2.2rem;
+  font-family: 'Joti One', cursive;
 }

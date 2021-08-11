@@ -7,7 +7,7 @@ get '/' do
 end
 
 post '/response' do
-  name = params[:name]
+  @name = params[:name]
   b = params[:birthday].split("-").map(&:to_i)  
   today = Date.today
   dob = Date.new(b[0], b[1], b[2])
@@ -23,14 +23,15 @@ post '/response' do
   @is_birthday = today.month == birthday.month && today.day == birthday.day
 
   if @is_birthday
-    @birthday_message = "Happy birthday #{name}!!!"
+    @birthday_message = "Happy Birthday"
   else
-    @birthday_message = "Hello #{name} :)\nYour birthday is in #{days_left} days on the #{formatted_date}"
+    @birthday_message = "Hello #{@name} :)\nYour birthday is in #{days_left} days on the #{formatted_date}"
   end
 
   cake_number = rand(1..3)
 
   @cake = url("/images/cake#{cake_number}.jpg")
+  @fontstyle = @is_birthday ? "birthday" : "normal"
 
   erb :response
 end

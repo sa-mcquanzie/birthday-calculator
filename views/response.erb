@@ -1,11 +1,15 @@
 <div id="response-container">
-  <div id="birthday-message">
+  <div id="birthday-message" class="<%= @fontstyle %>">
     <p><%= @birthday_message %></p>
+    <p><% if @is_birthday %><%= @name %>!<% end %></p>
   </div>
   
   <% if @is_birthday %>
     <div id="cake-image">
-      <img src="<%= @cake %>" alt="Birthday cake">
+      <figure>
+        <img src="<%= @cake %>" alt="Birthday cake">
+        <figcaption>Cakes by Corrine</figcaption>
+      </figure>
     </div>
   <% end %>
 </div>
