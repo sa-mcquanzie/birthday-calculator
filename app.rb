@@ -28,5 +28,9 @@ post '/response' do
     @birthday_message = "Hello #{name} :)\nYour birthday is in #{days_left} days on the #{formatted_date}"
   end
 
+  cake_number = rand(1..3)
+
+  @cake = url("/images/cake#{cake_number}.jpg")
+
   erb :response
 end

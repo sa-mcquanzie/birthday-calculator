@@ -11,7 +11,13 @@
 
   <body>
     <div id="response-container">
-      <p id="birthday-message"><%= @birthday_message %></p>
+      <div id="birthday-message">
+        <p><%= @birthday_message %></p>
+      </div>
+      
+      <div id="cake-image">
+        <img src="<%= @cake %>" alt="Birthday cake">
+      </div>
     </div>
   </body>
 </html>
