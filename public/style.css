@@ -39,6 +39,7 @@ input {
 }
 
 #cake-image img {
+  border-radius: 16px;;
   width: 33.3vw;
   height:auto;
 }

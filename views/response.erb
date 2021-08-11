@@ -15,9 +15,11 @@
         <p><%= @birthday_message %></p>
       </div>
       
-      <div id="cake-image">
-        <img src="<%= @cake %>" alt="Birthday cake">
-      </div>
+      <% if @is_birthday %>
+        <div id="cake-image">
+          <img src="<%= @cake %>" alt="Birthday cake">
+        </div>
+      <% end %>
     </div>
   </body>
 </html>

@@ -20,9 +20,9 @@ post '/response' do
 
   days_left = (birthday - today).numerator
   formatted_date = birthday.strftime("#{birthday.day.ordinalize} of %B, #{birthday.year}")
-  is_birthday = today.month == birthday.month && today.day == birthday.day
+  @is_birthday = today.month == birthday.month && today.day == birthday.day
 
-  if is_birthday
+  if @is_birthday
     @birthday_message = "Happy birthday #{name}!!!"
   else
     @birthday_message = "Hello #{name} :)\nYour birthday is in #{days_left} days on the #{formatted_date}"
