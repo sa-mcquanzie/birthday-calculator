@@ -1,25 +1,11 @@
-<!DOCTYPE html>
-
-<html>
-  <head>
-    <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
-    
-    <title>
-      Birthdays
-    </title>
-  </head>
-
-  <body>
-    <div id="response-container">
-      <div id="birthday-message">
-        <p><%= @birthday_message %></p>
-      </div>
-      
-      <% if @is_birthday %>
-        <div id="cake-image">
-          <img src="<%= @cake %>" alt="Birthday cake">
-        </div>
-      <% end %>
+<div id="response-container">
+  <div id="birthday-message">
+    <p><%= @birthday_message %></p>
+  </div>
+  
+  <% if @is_birthday %>
+    <div id="cake-image">
+      <img src="<%= @cake %>" alt="Birthday cake">
     </div>
-  </body>
-</html>
+  <% end %>
+</div>
