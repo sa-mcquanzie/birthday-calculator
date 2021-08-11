@@ -1,8 +1,19 @@
-#form-container, #response-container {
+body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 66vh;
+  flex-direction: row;
+  height: 100vh;
+  padding: 0;
+  overflow: hidden;
+}
+
+
+#form-container, #response-container {
+  max-width: 66.6vw;
+  max-height: 100%;
+  overflow-x: hidden;
+  margin: auto;
 }
 
 form {
@@ -15,7 +26,6 @@ form {
 
 label {
   font    : 1.4em "courier", monospace, sans-serif;
-  /* font-size    : 1.4em; */
   padding      : 0 0 2rem 0
 }
 
@@ -26,4 +36,9 @@ input {
   padding : 0 0 0.4rem 0;
   margin  : 0 0 2rem 0;
   width   : 100%;
+}
+
+#cake-image img {
+  width: 33.3vw;
+  height:auto;
 }
