@@ -1,5 +1,9 @@
 body {
   background-color: #e6e6ff;
+  background: rgb(222,134,197);
+  background: -moz-linear-gradient(0deg, rgba(222,134,197,1) 0%, rgba(230,230,255,1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(222,134,197,1) 0%, rgba(230,230,255,1) 100%);
+  background: linear-gradient(0deg, rgba(222,134,197,1) 0%, rgba(230,230,255,1) 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,34 +13,42 @@ body {
   overflow: hidden;
 }
 
+figcaption {
+  font-size: 1.4rem;
+  font-family: 'WindSong', cursive;
+}
 
-#form-container, #response-container {
-  max-width: 66.6vw;
-  max-height: 100%;
-  overflow-x: hidden;
-  margin: auto;
+figcaption a {
+  color: #000;
+  text-decoration: none;
+}
+
+figcaption a:hover {
+  color: #000;
+  text-decoration: underline;
 }
 
 form {
   margin : 0 auto;
   padding: 1em;
   box-sizing: border-box;
-  background : #F0F url(background.jpg);
+  background : #9900cc url(background.jpg);
   border-radius: 16px;
+}
+
+input {
+  font    : 1.4em "inconsolata", monospace;
+  box-sizing: border-box;
+  border  : none;
+  border-radius: 4px;
+  padding : 0.4rem;
+  margin  : 1rem 0 1rem 0;
+  width   : 100%;
 }
 
 label {
   font    : 1.4em "courier", monospace, sans-serif;
-  padding      : 0 0 2rem 0
-}
-
-input {
-  font    : 1.4em/1.5em "courier", monospace, sans-serif;
-  border  : none;
-  border-radius: 4px;
-  padding : 0 0 0.4rem 0;
-  margin  : 0 0 2rem 0;
-  width   : 100%;
+  margin  : 0 0 2rem 0
 }
 
 #cake-image img {
@@ -46,10 +58,19 @@ input {
   max-height: 66.6vh;
 }
 
-.birthday {
-  color: #9900cc;
-  line-height: 0.75;
-  text-align: center;
-  font-size: 2.2rem;
-  font-family: 'Joti One', cursive;
+#form-container, #response-container {
+  max-width: 66.6vw;
+  max-height: 100%;
+  overflow-x: hidden;
+  margin: auto;
 }
+
+.birthday {
+  color: #cc3399;
+  line-height: 0.75;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  font-size: 2.4rem;
+  font-family: 'Fredericka the Great', cursive;
+}
+
