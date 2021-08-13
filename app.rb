@@ -10,31 +10,26 @@ post '/response' do
   b = params[:birthday].split("-").map(&:to_i)
   cake_number = rand(1..3)
   dob = Date.new(b[0], b[1], b[2])
-  today = Date.today
 
   if Date.today.yday < dob.yday
-    birthday = Date.new(today.year, dob.month, dob.day)
-    next_age = birthday.year - dob.year + 1
-
+    birthday = Date.new(Date.today.year, dob.month, dob.day)
   else
-    birthday = Date.new(today.year + 1, dob.month, dob.day)
-    next_age = birthday.year - dob.year
+    birthday = Date.new(Date.today.year + 1, dob.month, dob.day)
   end
 
-  days_left = (birthday - today).numerator
-  formatted_date = birthday.strftime("#{birthday.day.ordinalize} of %B, #{birthday.year}")
-  
-  @is_birthday = today.month == birthday.month && today.day == birthday.day
-
-  if @is_birthday
-    @birthday_message = "Happy Birthday"
-  else
-    @birthday_message = "Your #{next_age.ordinalize} birthday is in #{days_left} days on the #{formatted_date}"
-  end
+  age = birthday.year - dob.year - 1
+  days_left = (birthday - Date.today).numerator
 
   @cake = url("/images/cake#{cake_number}.jpg")
+  @is_birthday = Date.today.month == birthday.month && Date.today.day == birthday.day
   @fontstyle = @is_birthday ? "happy-birthday" : "not-birthday"
   @name = params[:name]
+
+  if @is_birthday
+    @birthday_message = "Happy #{age.ordinalize} Birthday"
+  else
+    @birthday_message = "There are <b>#{days_left}</b> days until your #{(age - 1).ordinalize} birthday!"
+  end
 
   erb :response
 end
