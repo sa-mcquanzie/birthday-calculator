@@ -65,12 +65,16 @@ label {
   margin: auto;
 }
 
-.birthday {
+.happy-birthday {
   color: #cc3399;
   line-height: 0.75;
   letter-spacing: 0.2rem;
   text-align: center;
   font-size: 2.4rem;
   font-family: 'Fredericka the Great', cursive;
+}
+
+.not-birthday {
+  font-size: 2rem;
 }
 

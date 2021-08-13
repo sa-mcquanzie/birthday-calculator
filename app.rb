@@ -33,7 +33,7 @@ post '/response' do
   end
 
   @cake = url("/images/cake#{cake_number}.jpg")
-  @fontstyle = @is_birthday ? "birthday" : "normal"
+  @fontstyle = @is_birthday ? "happy-birthday" : "not-birthday"
   @name = params[:name]
 
   erb :response
